@@ -5,6 +5,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include <inttypes.h>
 #include <string.h>
 #include <math.h>
 
@@ -16,8 +17,7 @@
 #define _80MHZ 0x04 
 
 #include "TM4C123GH6PM.h"
-#include "GPIO.h"
 #include "PLL.h"
-#include "UART.h"
+
 
 #endif /* INCLUDE_H_ */

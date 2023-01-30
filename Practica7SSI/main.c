@@ -1,59 +1,14 @@
+
 #include "lib/include.h"
-
-
+volatile float temperatura1 = 0;
 int main(void)
-{   
-    int8_t word[2];
-    uint16_t count = 0;
-    Configurar_PLL(_40MHZ);  //Confiuracion de velocidad de reloj 50MHZ
-    Configurar_GPIO();
-    Configurar_UART0();
-    Configurar_SSI2();
-    while(1)
-    {
-        //word[0] = readChar();
-        //word[1] = readChar();
-        count += 1; 
-        //count = 1;
-        SPI_write((uint8_t)count); 
-        SysTick_1ms(50000);
-        SysTick_1ms(50000);
-        SysTick_1ms(50000);
-        SysTick_1ms(50000);
-        SysTick_1ms(50000);
-        SysTick_1ms(50000);
-        SysTick_1ms(50000);
-        SysTick_1ms(50000);
-        SysTick_1ms(50000);
-        SysTick_1ms(50000);
-        /*
-                count = 2;
-        SPI_write((uint8_t)count);
-        SysTick_1ms(50000);
-        count = 3;
-        SPI_write((uint8_t)count); 
-        SysTick_1ms(50000);
-        count = 4;
-        SPI_write((uint8_t)count);
-        SysTick_1ms(50000);
-        count = 5;
-        SPI_write((uint8_t)count); 
-        SysTick_1ms(50000);
-        count = 6;
-        SPI_write((uint8_t)count);
-        SysTick_1ms(50000);
-        count = 7;
-        SPI_write((uint8_t)count); 
-        SysTick_1ms(50000);
-        count = 8;
-        SPI_write((uint8_t)count);
-        SysTick_1ms(50000);
-        
-        */
+{
+//    int temperatura = 0;
+    Configurar_PLL(50000000);  // Configuración a 50 MHz
+    Configurar_SSI3();
 
-        //printChar('\n');
-
-        //SPI_write(word[1]);
+    while (1){
+//        SPI_write_data();
+    temperatura1 = SPI_readMAX();
     }
-
 }
